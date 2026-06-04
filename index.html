@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鈴木研究室 体験プログラムポータル</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="design.css" />
+    
+    <style>
+        /* index.html 固有のレイアウト微調整 */
+        .welcome-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            overflow-y: auto;
+            flex: 1;
+            width: 100%;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            margin-bottom: 25px;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .feature-list li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* アプリケーションへのリンクボタン */
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .launch-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .launch-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>先進/総合ゼミナール・鈴木研究室体験</h1>
+        <div class="description">地域データ可視化プロジェクト・ポータル</div>
+    </header>
+
+    <div class="welcome-container">
+        <div class="card">
+            <h2>プロジェクト概要</h2>
+            <p>
+                本プログラムでは、地域の「ゴミ集積所データ」を活用し、Web地図上に可視化するシステムを構築・体験します。
+                CSV形式のオープンデータをシステムに読み込ませることで、台帳番号、エリア、行政区、所在地などの属性データをもとに、特定の条件に合致する集積所を瞬時に絞り込み、視覚的に分析することが可能です。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>主な機能と特徴</h2>
+            <ul class="feature-list">
+                <li><strong>ドラッグ＆ドロップ対応：</strong> お手持ちのCSVファイルをブラウザに落とすだけで即座にマッピング。</li>
+                <li><strong>Wフィルター機能：</strong> 「エリア」と「行政区」の2つの条件から動的に対象データを絞り込み。</li>
+                <li><strong>インタラクティブマップ：</strong> Leafletを採用し、ピンのクリックで詳細な台帳情報をポップアップ表示。</li>
+                <li><strong>サイドバー連動：</strong> 絞り込まれた対象地点の一覧から、マップ上の位置へクイックアクセス。</li>
+            </ul>
+        </div>
+
+        <div class="btn-container">
+            <a href="GarbagePointMap.html" class="launch-button">
+                🗺️ ゴミ集積所マップを起動する
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 先進/総合ゼミナール 鈴木研究室 All Rights Reserved.
+    </footer>
+
+</body>
+</html>
