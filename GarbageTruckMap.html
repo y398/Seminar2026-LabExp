@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゴミ収集車トラッキングマップ（先進/総合ゼミナール・鈴木研究室体験）</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design.css" />
+</head>
+<body>
+    <header>
+        <h1>ゴミ収集車トラッキングマップ（先進/総合ゼミナール・鈴木研究室体験）</h1>
+        <div class="description">MQTTで取得した塵芥車の位置情報をリアルタイムにマッピング</div>
+    </header>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="mqtt-section">
+                <h3>📡 MQTT接続情報</h3>
+                <div class="mqtt-info-list">
+                    <div class="mqtt-info-row"><span class="mqtt-info-label">プロトコル</span><span class="mqtt-info-value">WSS</span></div>
+                    <div class="mqtt-info-row"><span class="mqtt-info-label">ブローカー</span><span class="mqtt-info-value">nisshin-gc.ucl.meijo-u.ac.jp</span></div>
+                    <div class="mqtt-info-row"><span class="mqtt-info-label">ポート</span><span class="mqtt-info-value">1880</span></div>
+                    <div class="mqtt-info-row"><span class="mqtt-info-label">パス</span><span class="mqtt-info-value">/ws/mqtt</span></div>
+                </div>
+                <label for="clientIdInput">クライアントID</label>
+                <input type="text" id="clientIdInput" class="text-input" placeholder="例: 学籍番号" />
+                <button id="connectBtn" class="action-button">ブローカーに接続</button>
+                <div id="connectionStatus" class="status-badge status-disconnected">未接続</div>
+            </div>
+
+            <div class="filter-section">
+            <h3>🔔 サブスクライブ設定</h3>
+            <div class="filter-group">
+            <label for="topicInput">トピック名</label>
+            <input type="text" id="topicInput" class="text-input" placeholder="例: /nisshin/truck/+/location/" />
+            </div>
+            <button id="subscribeBtn" class="action-button" disabled>このトピックをサブスクライブ</button>
+            <div id="subscribeStatus" class="status-badge status-disconnected">未サブスクライブ</div>
+            </div>
+
+            <div class="data-summary" id="dataSummary">
+            <h3 id="listTitle">受信した位置情報</h3>
+            <ul class="data-list" id="locationList">
+            <li class="no-data-message">まだ位置情報を受信していません</li>
+            </ul>
+            </div>
+
+        </div>
+
+        <div class="map-container">
+        <div id="map"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/mqtt@5.10.1/dist/mqtt.min.js"></script>
+    <script src="truck.js"></script>
+</body>
+</html>

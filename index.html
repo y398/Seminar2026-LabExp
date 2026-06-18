@@ -59,7 +59,10 @@
 
         /* アプリケーションへのリンクボタン */
         .btn-container {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
             margin-top: 30px;
         }
 
@@ -115,12 +118,16 @@
                 <li><strong>Wフィルター機能：</strong> 「エリア」と「行政区」の2つの条件から動的に対象データを絞り込み。</li>
                 <li><strong>インタラクティブマップ：</strong> Leafletを採用し、ピンのクリックで詳細な台帳情報をポップアップ表示。</li>
                 <li><strong>サイドバー連動：</strong> 絞り込まれた対象地点の一覧から、マップ上の位置へクイックアクセス。</li>
+                <li><strong>リアルタイム車両トラッキング：</strong> MQTT（WSS）でゴミ収集車の位置情報を受信し、最新の位置のみを地図上に表示。</li>
             </ul>
         </div>
 
         <div class="btn-container">
             <a href="GarbagePointMap.html" class="launch-button">
                 🗺️ ゴミ集積所マップを起動する
+            </a>
+            <a href="GarbageTruckMap.html" class="launch-button">
+                🚛 ゴミ収集車トラッキングマップを起動する
             </a>
         </div>
     </div>

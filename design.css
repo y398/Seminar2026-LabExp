@@ -141,3 +141,124 @@ header h1 { font-size: 1.2rem; font-weight: 500; margin-bottom: 5px; }
     vertical-align: top;
 }
 .popup-table td { padding: 4px 0; color: #1a202c; word-break: break-all; }
+
+.mqtt-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+.mqtt-section label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.mqtt-info-list {
+  margin-bottom: 12px;
+}
+
+.mqtt-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.mqtt-info-label {
+  color: #777;
+}
+
+.mqtt-info-value {
+  color: var(--text-color);
+  font-weight: 500;
+  word-break: break-all;
+  text-align: right;
+}
+
+.text-input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.action-button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 0;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.action-button:hover:not(:disabled) {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+.action-button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.status-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.status-disconnected {
+  background-color: #eee;
+  color: #777;
+}
+
+.status-connecting {
+  background-color: #fff3cd;
+  color: #8a6d1f;
+}
+
+.status-connected {
+  background-color: #d4edda;
+  color: #1e7e34;
+}
+
+.status-error {
+  background-color: #f8d7da;
+  color: #b02a37;
+}
+
+.data-list-item {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-list-time {
+  color: #888;
+  font-size: 0.75rem;
+}
+
+.no-data-message {
+  font-size: 0.82rem;
+  color: #999;
+  padding: 8px 0;
+}
